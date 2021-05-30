@@ -1,0 +1,2 @@
+rootProject.name = "Lab_Android_Outlay"
+include ':app'
