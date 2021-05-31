@@ -32,8 +32,6 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
 
-        /* Find another way to do that */
-        (activity as BaseActivity).supportActionBar?.title = getString(R.string.register_fragment_label)
         return binding.root
     }
 

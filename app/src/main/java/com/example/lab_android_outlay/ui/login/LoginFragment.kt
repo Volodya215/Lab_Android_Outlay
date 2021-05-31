@@ -42,8 +42,6 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
-        /* Find another way to do that */
-        (activity as BaseActivity).supportActionBar?.title = getString(R.string.login_fragment_label)
 
         return binding.root
 

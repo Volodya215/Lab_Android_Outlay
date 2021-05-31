@@ -31,7 +31,6 @@ class HistoryFragment : Fragment() {
         binding.historyRecycler.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.historyRecycler.adapter = HistoryAdapter(Category.categories)
 
-
         return binding.root
     }
 

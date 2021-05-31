@@ -33,8 +33,6 @@ class EnterDataFragment : Fragment() {
         binding.categoryRecycler.layoutManager = GridLayoutManager(requireContext(), 2, RecyclerView.HORIZONTAL, false)
         binding.categoryRecycler.adapter = CategoryAdapter(Category.categories)
 
-        /* Find another way to do that */
-        (activity as BaseActivity).supportActionBar?.title = getString(R.string.fragment_enter_data)
         return binding.root
     }
 

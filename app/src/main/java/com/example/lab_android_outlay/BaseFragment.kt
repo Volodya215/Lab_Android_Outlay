@@ -40,6 +40,8 @@ class BaseFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_loginFragment)
         }
 
+        (activity as BaseActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
         return binding.root
     }
 
@@ -47,4 +49,6 @@ class BaseFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
