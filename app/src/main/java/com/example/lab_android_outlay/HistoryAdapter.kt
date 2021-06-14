@@ -1,5 +1,6 @@
 package com.example.lab_android_outlay
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,9 @@ class HistoryVH(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(historyData: HistoryUserData) {
 
         ui.amount.text = historyData.amount.toString()
+        if(historyData.limit < historyData.amount)
+            ui.amount.setTextColor(Color.parseColor("#e80707"))
+
         ui.icon.setImageResource(historyData.icon)
         ui.textView.setText(historyData.text)
     }

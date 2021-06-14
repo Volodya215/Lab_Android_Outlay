@@ -12,4 +12,5 @@
     <color name="menuButtonColor">#2DAD41</color>
     <color name="blackTheme">#25273e</color>
     <color name="clickOnBlackTheme">#35364c</color>
+    <color name="redColor">#e80707</color>
 </resources>
