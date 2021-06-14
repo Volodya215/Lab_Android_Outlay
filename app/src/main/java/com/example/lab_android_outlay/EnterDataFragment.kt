@@ -6,12 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lab_android_outlay.data.model.UserData
 import com.example.lab_android_outlay.databinding.FragmentEnterDataBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -44,15 +41,13 @@ class EnterDataFragment : Fragment() {
         binding.categoryRecycler.adapter = CategoryAdapter(Category.categories)
 
         binding.submit.setOnClickListener {
-            var sum: Long? = binding.number.text.toString().toLong()
-            var position = CategoryAdapter.index
+            val sum: Long? = binding.number.text.toString().toLong()
+            val position = CategoryAdapter.index
             if(sum == null || position == -1)
                 Toast.makeText(this.context, "You need to select category and enter the cost amount", Toast.LENGTH_LONG).show()
             else
             {
                 try {
-                   // getUserFromDB()
-
                     setValueOfCostsInDatabase(position, sum)
                 }
                 catch (e: Exception)
@@ -69,7 +64,7 @@ class EnterDataFragment : Fragment() {
     {
         firebaseUser = FirebaseAuth.getInstance().currentUser
 
-        var category: String = when(position) {
+        val category: String = when(position) {
             0 -> "houseSum"
             1 -> "carSum"
             2 -> "travelSum"
@@ -79,7 +74,7 @@ class EnterDataFragment : Fragment() {
             6 -> "sweetsSum"
             7 -> "clothesSum"
             8 -> "beautySum"
-            9 -> "TVSum"
+            9 -> "tvsum"
             else -> ""
         }
 
