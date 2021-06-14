@@ -80,6 +80,7 @@ class LoginFragment : Fragment() {
                 }
                 loginResult.success?.let {
                     updateUiWithUser(it)
+                    findNavController().navigate(R.id.action_loginFragment_to_FirstFragment)
                 }
             })
 
@@ -117,7 +118,7 @@ class LoginFragment : Fragment() {
                 usernameEditText.text.toString(),
                 passwordEditText.text.toString()
             )
-            findNavController().navigate(R.id.action_loginFragment_to_FirstFragment)
+
         }
     }
 

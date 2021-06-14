@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lab_android_outlay.databinding.ItemCategoryBinding
 import com.example.lab_android_outlay.databinding.ItemHistoryBinding
 
-class HistoryAdapter(val data: List<Category>) : RecyclerView.Adapter<HistoryVH>() {
+class HistoryAdapter(val data: List<HistoryUserData>) : RecyclerView.Adapter<HistoryVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryVH {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_history, parent, false)
         return HistoryVH(view)
@@ -25,16 +25,19 @@ class HistoryVH(view: View) : RecyclerView.ViewHolder(view) {
 
     val ui: ItemHistoryBinding = ItemHistoryBinding.bind(view)
 
-    fun bind(category: Category) {
+    fun bind(historyData: HistoryUserData) {
 
-        ui.icon.setImageResource(category.icon)
-        ui.textView.setText(category.text)
+        ui.amount.text = historyData.amount.toString()
+        ui.icon.setImageResource(historyData.icon)
+        ui.textView.setText(historyData.text)
     }
 }
 
-class CategoryAdapter(val data: List<Category>) : RecyclerView.Adapter<CategoryVH>() {
+open class CategoryAdapter(val data: List<Category>) : RecyclerView.Adapter<CategoryVH>() {
 
-    var index = -1
+    companion object {
+        var index = -1
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryVH {
         val view =
@@ -53,6 +56,7 @@ class CategoryAdapter(val data: List<Category>) : RecyclerView.Adapter<CategoryV
             index = position
             notifyDataSetChanged()
         }
+
     }
 
     override fun getItemCount() = data.size

@@ -33,7 +33,11 @@
         android:id="@+id/enterDataFragment"
         android:name="com.example.lab_android_outlay.EnterDataFragment"
         android:label="@string/fragment_enter_data"
-        tools:layout="@layout/fragment_enter_data" />
+        tools:layout="@layout/fragment_enter_data" >
+        <action
+            android:id="@+id/action_enterDataFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.lab_android_outlay.ui.login.LoginFragment"
@@ -50,7 +54,11 @@
         android:id="@+id/registerFragment"
         android:name="com.example.lab_android_outlay.RegisterFragment"
         android:label="@string/register_fragment_label"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/setLimitsFragment"
         android:name="com.example.lab_android_outlay.SetLimitsFragment"

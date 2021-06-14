@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.lab_android_outlay.data.LoginDataSource
 import com.example.lab_android_outlay.databinding.FragmentBaseBinding
 
 /**
@@ -37,6 +38,8 @@ class BaseFragment : Fragment() {
         }
 
         binding.logOutButton.setOnClickListener {
+            var loginData: LoginDataSource = LoginDataSource()
+            loginData.logout()
             findNavController().navigate(R.id.action_FirstFragment_to_loginFragment)
         }
 
