@@ -46,7 +46,7 @@ class HistoryFragment : Fragment() {
         refUsers = FirebaseDatabase.getInstance().reference.child("Users").child(firebaseUser!!.uid)
 
 
-        refUsers!!.addValueEventListener(object : ValueEventListener {
+        refUsers!!.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
 
             }
