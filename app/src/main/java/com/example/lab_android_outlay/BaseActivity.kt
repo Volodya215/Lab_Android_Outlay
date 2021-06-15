@@ -1,13 +1,13 @@
 package com.example.lab_android_outlay
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.lab_android_outlay.databinding.ActivityBaseBinding
+import com.google.firebase.database.FirebaseDatabase
 
 class BaseActivity : AppCompatActivity() {
 
@@ -25,6 +25,9 @@ class BaseActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_base)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        val scoresRef = FirebaseDatabase.getInstance().getReference("Users")
+        scoresRef.keepSynced(true)
 
     }
 

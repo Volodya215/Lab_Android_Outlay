@@ -82,7 +82,7 @@ class RegisterFragment : Fragment() {
                        /// refUsers = FirebaseDatabase.getInstance().reference.child("Users").child(firebaseUserId)
 
                         var refOnDb = FirebaseDatabase.getInstance();
-                        refOnDb.setPersistenceEnabled(true)
+                        //efOnDb.setPersistenceEnabled(true)
 
                         refUsers = refOnDb.getReference("Users").child(firebaseUserId)
                         var user  = UserData(firebaseUserId, email)
